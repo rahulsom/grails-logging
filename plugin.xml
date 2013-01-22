@@ -1,17 +1,25 @@
 <plugin name='logging' version='0.1-SNAPSHOT' grailsVersion='2.1 &gt; *'>
-  <author>Certify Data Systems</author>
   <title>Logging Plugin</title>
   <description>Common logging facilities for projects</description>
   <type>LoggingGrailsPlugin</type>
   <packaging>binary</packaging>
-  <resources />
+  <resources>
+    <resource>LoggingDefaultConfig</resource>
+    <resource>logging.LoggingAdminController</resource>
+  </resources>
   <repositories>
     <repository name='grailsCentral' url='http://grails.org/plugins' />
     <repository name='http://repo.grails.org/grails/core' url='http://repo.grails.org/grails/core/' />
     <repository name='mavenCentral' url='http://repo1.maven.org/maven2/' />
   </repositories>
   <dependencies />
-  <plugins />
-  <runtimePluginRequirements />
+  <plugins>
+    <compile>
+      <plugin group='org.grails.plugins' name='plugin-config' version='0.1.5' />
+    </compile>
+  </plugins>
+  <runtimePluginRequirements>
+    <plugin name='pluginConfig' version='0.1.5' />
+  </runtimePluginRequirements>
   <behavior />
 </plugin>
