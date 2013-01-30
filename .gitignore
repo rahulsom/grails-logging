@@ -9,6 +9,7 @@
 *.log
 
 # "temporary" build files
+/plugin.xml
 /target
 /target-eclipse
 
