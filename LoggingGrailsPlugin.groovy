@@ -64,8 +64,22 @@ class LoggingGrailsPlugin {
         if (key) MDC.remove(key)
       }
     }
-    
+
+    SLF4JLog.metaClass.withMdc = { Map<String, Object> toAdd, Closure op ->
+      toAdd.each { key, value ->
+        MDC.put(key, value == null ? '' : value.toString())
+      }
+      try {
+        op()
+      } finally {
+        toAdd.each { key, value ->
+          MDC.remove(key)
+        }
+      }
+    }
+
     SLF4JLog.metaClass.withNdc = { Object message, Closure op ->
+      // unlike withMdc, show 'null' if null
       NDC.push(message?.toString())
       try {
         op()

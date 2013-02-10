@@ -6,7 +6,7 @@ log4j = {
   appenders {
     appender new AnsiConsoleAppender(
       name: 'stdout', 
-      layout: pattern(conversionPattern: '%d{ISO8601} [%15.15t] %-5p %30.30c - %m%n')
+      layout: pattern(conversionPattern: '%d{ISO8601} [%15.15t] %-5p %30.30c %x %X{a} %X{b} - %m%n')
     )
   }
   error  'org.codehaus.groovy.grails.web.servlet',  //  controllers
@@ -23,6 +23,8 @@ log4j = {
 
   warn   'org.mortbay.log'
 
+  debug  'logging'
+  
   root {
     warn 'stdout'
   }

@@ -1,6 +1,6 @@
 grails.project.class.dir = "target/classes"
-grails.project.target.level = 1.5
-grails.project.source.level = 1.5
+grails.project.target.level = 1.7
+grails.project.source.level = 1.7
 grails.project.test.class.dir = "target/test-classes"
 grails.project.test.reports.dir = "target/test-reports"
 
@@ -23,8 +23,7 @@ grails.project.dependency.resolution = {
 
   plugins {
     build(":tomcat:$grailsVersion",
-          ":release:2.0.3",
-          ":rest-client-builder:1.0.2") {
+          ":release:2.2.0") {
         export = false
     }
     compile ':plugin-config:0.1.5'
